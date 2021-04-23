@@ -1,4 +1,4 @@
-# Experiments for In-Memory iDEC Algorithms
+# Experiments for External Memory iDEC Algorithms
 
 ## Usage
 
