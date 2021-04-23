@@ -1,5 +1,6 @@
 # iDEC
-This is the code for iDEC with both in-memory and external memory implementation.\n
+This is the code for iDEC with both in-memory and external memory implementation.
+
 Please go to in-memory and external-memory folder for details.
 
 # Reference
