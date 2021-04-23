@@ -1,7 +1,7 @@
 # iDEC
 This is the code for iDEC with both in-memory and external memory implementation.
 
-Please go to *in-memory/EXPERIMENTS* and *external-memory/EXPERIMENTS* for running examples.
+Please go to **in-memory/EXPERIMENTS** and **external-memory/EXPERIMENTS** folders for demo experiments.
 
 # Dependencies
 Please install **HighFive** (https://github.com/BlueBrain/HighFive) before running the code.
