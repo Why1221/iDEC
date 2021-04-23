@@ -17,7 +17,7 @@ function usage {
     printf -- ' -a: (default) run (A)ll algorithms - good luck!\n' >&2
     printf -- ' -c: clean all!\n' >&2
     printf -- ' -h: print this (H)elp message\n' >&2
-    printf -- ' -r <alg>: only run <alg>, where <alg>=LinearScan|iDEC|iDEC-STEAL\n' >&2
+    printf -- ' -r <alg>: only run <alg>, where <alg>=LinearScan|iDEC\n' >&2
     exit 2
 }
 
@@ -172,110 +172,6 @@ function CleaniDEC {
     echo "Done"
 }
 
-# Compile iDEC
-function CompileiDECSteal {
-    cd ${WORKING_DIR}
-    echo "Compile iDEC-STEAL ..."
-    cd ../iDEC
-    make clean
-    make idec-steal
-    chmod +x ./idec-steal
-    cp ./idec-steal ${WORKING_DIR}
-    cd ${WORKING_DIR}
-    echo "Done."
-}
-
-# Run iDEC
-function RuniDECSteal {
-
-    cd ${WORKING_DIR}
-    if [ ! -f ./idec-steal ]; then
-        error_exit "Executable file ${WORKING_DIR}/idec-steal does not exist, please compile it and copy it to ${WORKING_DIR} first ..."
-    fi
-
-    dsname=$1
-    dstrainb=$2
-    dstestb=$3
-    n=$4
-    qn=$5
-    dim=$6
-
-    printf "Run iDECSteal on dataset %s ...\n" "${dsname}"
-
-    mkdir -p iDECSteal/${dsname}/index
-    mkdir -p iDECSteal/${dsname}/results
-    cp ./idec-steal iDECSteal/${dsname}
-    cd iDECSteal/${dsname}
-
-    echo "./idec-steal -d $dim -n $n -ds ../../${dsname}/${dstrainb} -if index -m ${iDEC_M}"
-    if [ $DEBUG == 0 ]
-    then
-        ./idec-steal -d $dim -n $n -ds ../../${dsname}/${dstrainb} -if index -m ${iDEC_M}
-    fi
-
-    for t in "${iDEC_T[@]}"
-    do
-        echo "./idec-steal -d $dim -n $n -ds ../../${dsname}/${dstrainb} -qs ../../${dsname}/${dstestb} -if index -rf ./results/idec-$t.txt -gt ../../${dsname}/gnd.txt -qn $qn -t $t"
-        if [ $DEBUG == 0 ]
-        then
-            ./idec-steal -d $dim -n $n -ds ../../${dsname}/${dstrainb} -qs ../../${dsname}/${dstestb} -if index -rf ./results/idec-$t.txt -gt ../../${dsname}/gnd.txt -qn $qn -t $t
-        fi
-    done
-}
-
-# Clean iDEC
-function CleaniDECSteal {
-    echo "Clean iDEC-STEAL ..."
-    cd ${WORKING_DIR}
-    cd ../iDEC
-    make clean
-    echo "Done"
-}
-
-# Clean all
-function clean_all
-{
-    CleanLinearScan
-    CleaniDEC
-    CleaniDECSteal
-}
-
-# Run all algorithms
-function all
-{
-
-    # CompileLinearScan
-    CompileiDEC
-    CompileiDECSteal
-
-    for ds in "${DATASETS[@]}"
-    do
-        # read dataset information
-        IFS='%'
-        read -ra ds_info <<< "$ds" # str is read into an array as tokens separated by IFS
-
-        # TODO: change accordingly
-        dsname=${ds_info[0]}
-        dstrainfvecs=${ds_info[1]}
-        dstestfvecs=${ds_info[2]}
-        n=${ds_info[3]}
-        dim=${ds_info[4]}
-        qn=${ds_info[5]}
-        dsh5=${ds_info[6]}
-        dstrainflat=${ds_info[7]}
-        dstestflat=${ds_info[8]}
-
-        # RunLinearScan $dsname $dsh5 $n $qn $dim
-
-        RuniDEC $dsname $dstrainflat $dstestflat $n $qn $dim
-
-        RuniDECSteal $dsname $dstrainflat $dstestflat $n $qn $dim
-
-    done
-
-    clean_all
-}
-
 # Compile a single algorithm
 function compile_single
 {
@@ -286,8 +182,6 @@ function compile_single
         iDEC)
             CompileiDEC
             ;;
-        iDEC-STEAL)
-            CompileiDECSteal
         *)
             echo "Unknown option $1."
             usage
@@ -328,9 +222,6 @@ function single
                 ;;
             iDEC)
                 RuniDEC $dsname $dstrainflat $dstestflat $n $qn $dim
-                ;;
-            iDEC-STEAL)
-                RuniDECSteal $dsname $dstrainflat $dstestflat $n $qn $dim
                 ;;
             *)
                 echo "Unknown option $1."
