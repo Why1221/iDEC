@@ -1,0 +1,7 @@
+.idea
+.vscode
+cmake-*
+
+*.o
+linear-scan-compact-example 
+linear-scan
