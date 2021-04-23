@@ -1,0 +1,12 @@
+.idea
+cmake-*
+
+
+/idec-utils-test
+src/*.o
+test/*.o
+
+/idec
+/idec-steal
+/idec-steal-*.txt
+/kdtree_search_history_example

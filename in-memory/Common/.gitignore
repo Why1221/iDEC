@@ -1,0 +1,14 @@
+# folders
+.vscode
+.idea
+
+
+# files
+*.o
+ann-result-writer-test
+timer-test
+string-utils-test
+filename-utils-test
+AnnResultWriterTest
+TimerTest
+ann-result-writer-demo.txt

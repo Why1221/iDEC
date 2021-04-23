@@ -1,0 +1,11 @@
+/*.o
+cmake-*
+.idea
+rt-example
+
+/idec 
+/idec-compact
+/rtree-example
+
+/idec-steal
+

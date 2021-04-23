@@ -1,0 +1,1 @@
+deep10M%deep10M-l1-96-train.fvecs%deep10M-l1-96-test.fvecs%deep10M-l1-96-train.txt%deep10M-l1-96-test.txt%10000000%96%10000%deep10M-l1-96.h5

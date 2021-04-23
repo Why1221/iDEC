@@ -1,0 +1,82 @@
+{
+    "enron": {
+        "train-b": "enron-l1-1369-train.fvecs",
+        "test-b": "enron-l1-1369-test.fvecs",
+        "train-t": "enron-l1-1369-train.txt",
+        "test-t": "enron-l1-1369-test.txt",
+        "n": 94987,
+        "dimension": 1369,
+        "qn": 200,
+        "dsh5": "enron-l1-1369.h5"
+    },
+    "MNIST": {
+        "train-b": "MNIST-l1-784-train.fvecs",
+        "test-b": "MNIST-l1-784-test.fvecs",
+        "train-t": "MNIST-l1-784-train.txt",
+        "test-t": "MNIST-l1-784-test.txt",
+        "n": 69000,
+        "dimension": 784,
+        "qn": 200,
+        "dsh5": "MNIST-l1-784.h5"
+    },
+    "audio": {
+        "train-b": "audio-l1-192-train.fvecs",
+        "test-b": "audio-l1-192-test.fvecs",
+        "train-t": "audio-l1-192-train.txt",
+        "test-t": "audio-l1-192-test.txt",
+        "n": 53387,
+        "dimension": 192,
+        "qn": 200,
+        "dsh5": "audio-l1-192.h5"
+    },
+    "deep10M": {
+        "train-b": "deep10M-l1-96-train.fvecs",
+        "test-b": "deep10M-l1-96-test.fvecs",
+        "train-t": "deep10M-l1-96-train.txt",
+        "test-t": "deep10M-l1-96-test.txt",
+        "n": 10000000,
+        "dimension": 96,
+        "qn": 10000,
+        "dsh5": "deep10M-l1-96.h5"
+    },
+    "GIST": {
+        "train-b": "GIST-l1-960-train.fvecs",
+        "test-b": "GIST-l1-960-test.fvecs",
+        "train-t": "GIST-l1-960-train.txt",
+        "test-t": "GIST-l1-960-test.txt",
+        "n": 1000000,
+        "dimension": 960,
+        "qn": 1000,
+        "dsh5": "GIST-l1-960.h5"
+    },
+    "glove": {
+        "train-b": "glove-l1-100-train.fvecs",
+        "test-b": "glove-l1-100-test.fvecs",
+        "train-t": "glove-l1-100-train.txt",
+        "test-t": "glove-l1-100-test.txt",
+        "n": 1192514,
+        "dimension": 100,
+        "qn": 200,
+        "dsh5": "glove-l1-100.h5"
+    },
+    "sift50M": {
+        "train-b": "sift50M-l1-128-train.fvecs",
+        "test-b": "sift50M-l1-128-test.fvecs",
+        "train-t": "sift50M-l1-128-train.txt",
+        "test-t": "sift50M-l1-128-test.txt",
+        "n": 50000000,
+        "dimension": 128,
+        "qn": 10000,
+        "dsh5": "sift50M-l1-128.h5"
+    },
+    "Trevi": {
+        "train-b": "Trevi-l1-4096-train.fvecs",
+        "test-b": "Trevi-l1-4096-test.fvecs",
+        "train-t": "Trevi-l1-4096-train.txt",
+        "test-t": "Trevi-l1-4096-test.txt",
+        "n": 99900,
+        "dimension": 4096,
+        "qn": 200,
+        "dsh5": "Trevi-l1-4096.h5"
+    }
+}

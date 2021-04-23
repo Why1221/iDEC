@@ -1,0 +1,2 @@
+dsname,#n,#dim,#trees,m,index_size(bytes),construction_time(us)
+../EXPERIMENTS/audio/audio-hamming-192-train-compact.flat,54187,192,1,6,1592844,39261.462000

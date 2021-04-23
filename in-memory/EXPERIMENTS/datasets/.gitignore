@@ -1,0 +1,3 @@
+*.fvecs
+*.h5
+!audio-hamming-192.h5

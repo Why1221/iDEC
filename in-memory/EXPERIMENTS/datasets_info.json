@@ -1,0 +1,13 @@
+{
+    "audio": {
+        "train-b": "audio-l1-192-train.fvecs",
+        "test-b": "audio-l1-192-test.fvecs",
+        "train-t": "audio-l1-192-train.txt",
+        "test-t": "audio-l1-192-test.txt",
+        "n": 53387,
+        "dimension": 192,
+        "qn": 200,
+        "dsh5": "audio-l1-192.h5",
+        "universe": 200000
+    }
+}
