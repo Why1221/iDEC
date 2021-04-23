@@ -1,4 +1,4 @@
-# Experiments for In-Memory ANN Search Algorithms
+# Experiments for In-Memory iDEC Algorithms
 
 ## Usage
 
@@ -6,11 +6,7 @@
 ```bash
 ./prepare.py
 ```
-+ OPQ parepare (if using OPQ) **Make sure dependencies were installed before the following preparing steps**
-```bash
-cd OPQ/TransForm_Data
-# run main.m with Matlab
-```
+
 + Run experiments
 ```bash
 Usage: run.sh [-ahr]
@@ -20,5 +16,11 @@ options:
  -a: (default) run (A)ll algorithms - good luck!
  -c: clean all!
  -h: print this (H)elp message
- -r <alg>: only run <alg>, where <alg>=LinearScan|C2LSH|iDEC|QALSH|SRS
+ -r <alg>: only run <alg>, where <alg>=LinearScan|iDEC
 ```
+## Running Example
+```bash
+./run.sh -r LinearScan
+./run.sh -r iDEC
+```
+Make sure to run **LinearScan** before running **iDEC** algorithms.
